@@ -33,7 +33,7 @@ data class User(
         var respect:Int=0
         var lastVisit:Date?=Date()
         var isOnline:Boolean = false
-        fun id (value:String) = apply {this.id = id}
+        fun id (value:String) = apply {this.id = value}
         fun firstName (value: String?) = apply {firstName = value}
         fun lastName (value: String?) = apply {lastName = value}
         fun avatar (value:String?) = apply { avatar = value }

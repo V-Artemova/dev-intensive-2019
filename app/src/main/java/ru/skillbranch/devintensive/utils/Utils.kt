@@ -4,8 +4,8 @@ package ru.skillbranch.devintensive.utils
 object Utils {
     fun parseFullName(fullName: String): Pair<String?, String?> {
         val parts: List<String?> = fullName.split(" ")
-        var firstName = parts?.getOrNull(0)
-        var lastName = parts?.getOrNull(1)
+        var firstName = parts.getOrNull(0)
+        var lastName = parts.getOrNull(1)
 
         if (fullName.isBlank() || fullName.isEmpty()) {
             firstName = null
@@ -34,7 +34,7 @@ object Utils {
                 toStr = lastCharacter.toString()
                 return toStr
             } else {
-                val firstCharacterCapitalize: String = firstName!!.capitalize()
+                val firstCharacterCapitalize: String = firstName.capitalize()
                 val firstCharacter: Char = firstCharacterCapitalize[0]
                 println("$firstCharacter")
                 toStr = firstCharacter.toString()
@@ -65,8 +65,6 @@ object Utils {
     fun transliteration(divider: String = "",payload:String=" "): String {
         val sb = StringBuilder()
         val Str = "Not found simvols"
-        val toStr: String;
-        var ascCells:Int
         for (char in divider.toCharArray()) {
             when (char) {
                 'а' -> sb.append("a")
@@ -172,8 +170,8 @@ object Utils {
                 ' '->sb.append(payload)
                 else ->{  sb.append(char) } } }
         println("$sb")
-        toStr = sb.toString()
-        return toStr
+
+        return sb.toString()
 
     }
 }
