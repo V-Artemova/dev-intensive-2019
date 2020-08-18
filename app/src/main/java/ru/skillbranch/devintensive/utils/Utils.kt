@@ -1,6 +1,5 @@
 package ru.skillbranch.devintensive.utils
 
-import android.service.voice.AlwaysOnHotwordDetector
 
 object Utils {
     fun parseFullName(fullName: String): Pair<String?, String?> {
@@ -67,7 +66,7 @@ object Utils {
         val sb = StringBuilder()
         val Str = "Not found simvols"
         val toStr: String;
-var ascCells:Int
+        var ascCells:Int
         for (char in divider.toCharArray()) {
             when (char) {
                 'а' -> sb.append("a")
@@ -178,4 +177,3 @@ var ascCells:Int
 
     }
 }
-

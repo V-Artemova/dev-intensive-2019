@@ -59,47 +59,49 @@ class ExampleUnitTest {
         println("${Date().format("HH:mm")}")
 
     }
-     //Task5
-    @Test
-    fun test_dateAdd()
-     {
 
-         println("${  Date().add(11,TimeUnits.MINUTE)}")
-         println("${  Date().add(-11,TimeUnits.HOUR)}")
-     }
+    //Task5
+    @Test
+    fun test_dateAdd() {
+
+        println("${Date().add(11, TimeUnits.MINUTE)}")
+        println("${Date().add(-11, TimeUnits.HOUR)}")
+    }
 
     //Task6
     @Test
-    fun test_toInitials(){
+    fun test_toInitials() {
         Utils.toInitials("veronika", "artemova") //VA
-        Utils.toInitials(" ","") //null удалить пробел
-        Utils.toInitials(""," ") //null удалить пробел
-        Utils.toInitials(null,null) //null
-        Utils.toInitials("veronika",null) //V
-        Utils.toInitials(null,"Artemova") //A
+        Utils.toInitials(" ", "") //null удалить пробел
+        Utils.toInitials("", " ") //null удалить пробел
+        Utils.toInitials(null, null) //null
+        Utils.toInitials("veronika", null) //V
+        Utils.toInitials(null, "Artemova") //A
     }
- //Task7
+
+    //Task7
     @Test
     fun test_transliteration() {
-     Utils.transliteration("Женя Стереотипов") //Zhenya Stereotipov
-     Utils.transliteration("Amazing Петр", "_") //Amazing Petr
- }
- //Task8
-     @Test
-     fun test_humanizeDiff(){
+        Utils.transliteration("Женя Стереотипов") //Zhenya Stereotipov
+        Utils.transliteration("Amazing Петр", "_") //Amazing Petr
+    }
 
-    println(Date().add(-2, TimeUnits.HOUR).humanizeDiff())  //2 часа назад
-     println(Date().add(-5, TimeUnits.DAY).humanizeDiff()) //5 дней назад
-     println(Date().add(2, TimeUnits.MINUTE).humanizeDiff()) //через 2 минуты
-     println(Date().add(7, TimeUnits.DAY).humanizeDiff()) //через 7 дней
-     println(Date().add(-400, TimeUnits.DAY).humanizeDiff()) //более года назад
-     println(Date().add(400, TimeUnits.DAY).humanizeDiff()) //более чем через год
- }
-
-//Task9
+    //Task8
     @Test
-    fun test_builder(){
-    val user:User = User.Builder().id("1")
+    fun test_humanizeDiff() {
+
+        println(Date().add(-2, TimeUnits.HOUR).humanizeDiff())  //2 часа назад
+        println(Date().add(-5, TimeUnits.DAY).humanizeDiff()) //5 дней назад
+        println(Date().add(2, TimeUnits.MINUTE).humanizeDiff()) //через 2 минуты
+        println(Date().add(7, TimeUnits.DAY).humanizeDiff()) //через 7 дней
+        println(Date().add(-400, TimeUnits.DAY).humanizeDiff()) //более года назад
+        println(Date().add(400, TimeUnits.DAY).humanizeDiff()) //более чем через год
+    }
+
+    //Task9
+    @Test
+    fun test_builder() {
+        val user: User = User.Builder().id("1")
             .firstName("Veronika")
             .lastName("Artemova")
             .avatar("")
@@ -109,28 +111,31 @@ class ExampleUnitTest {
             .isOnline(true)
             .build()
 
-println("$user") }
+        println("$user")
+    }
 
-//Task10
-   @Test
-   fun test_plural(){
-    println  (TimeUnits.SECOND.plural(1))//1 секунду
-    println( TimeUnits.MINUTE.plural(4)) //4 минуты
-    println(TimeUnits.HOUR.plural(19)) //19 часов
-    println(  TimeUnits.DAY.plural(222)) //222 дня
+    //Task10
+    @Test
+    fun test_plural() {
+        println(TimeUnits.SECOND.plural(1))//1 секунду
+        println(TimeUnits.MINUTE.plural(4)) //4 минуты
+        println(TimeUnits.HOUR.plural(19)) //19 часов
+        println(TimeUnits.DAY.plural(222)) //222 дня
+    }
+
+    //Test11
+    @Test
+    fun test_truncate() {
+        println("Bender Bending Rodriguez — дословно «Сгибальщик Сгибающий Родригес»".truncate())
+        println("Bender Bending Rodriguez — дословно «Сгибальщик Сгибающий Родригес»".truncate(15))
+        println("A     ".truncate(3))
+    }
+
+    //Test12
+    @Test
+    fun test_stripHtml() {
+        println("<p>   Образовательное              IT-сообщество Skill Branch</p>".stripHtml()) //Образовательное IT-сообщество Skill Branch
+
+
+    }
 }
-//Test11
-   @Test
-   fun test_truncate(){
-  println ("Bender Bending Rodriguez — дословно «Сгибальщик Сгибающий Родригес»".truncate())
-    println ("Bender Bending Rodriguez — дословно «Сгибальщик Сгибающий Родригес»".truncate(15))
-   println ( "A     ".truncate(3)) }
-//Test12
- @Test
- fun test_stripHtml() {
-    println("<p>   Образовательное              IT-сообщество Skill Branch</p>".stripHtml()) //Образовательное IT-сообщество Skill Branch
-
-
-}
-}
-
